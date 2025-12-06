@@ -2,9 +2,6 @@
 using namespace std;
 
 int main() {
-    
-    cin.tie(nullptr);
-
     int n, x = 0;
     cin >> n;
     while(n--) {
