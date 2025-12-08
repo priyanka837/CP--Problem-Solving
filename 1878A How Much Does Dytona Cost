@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        vector<int> a(n);
+        bool hasK = false;
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            if (a[i] == k) hasK = true;
+        }
+
+        if (!hasK) {
+            cout << "NO\n";
+            continue;
+        }
+
+        if (n == 1) {
+            cout << "YES\n";
+            continue;
+        }
+
+        bool possible = false;
+        for (int i = 0; i < n; i++) {
+            if (a[i] != k) continue;
+            for (int j = max(0, i - 2); j <= min(n - 1, i + 2); j++) {
+                if (a[j] == k && abs(i - j) <= 2) {
+                    possible = true;
+                    break;
+                }
+            }
+            if (possible) break;
+        }
+
+        cout << (possible ? "YES" : "NO") << "\n";
+    }
+}
+
