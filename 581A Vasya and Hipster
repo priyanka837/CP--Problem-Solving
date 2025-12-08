@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int a, b;
+    cin >> a >> b;
+    int fashionable = min(a, b);
+    int remaining = abs(a - b);
+    int sameColorDays = remaining / 2;
+    cout << fashionable << " " << sameColorDays;
+}
+
+
+
