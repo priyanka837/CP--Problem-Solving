@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long long n;
+    cin >> n;
+    int lastTwo = 1;
+    n %= 20;
+    if (n == 0) n = 20;
+    for (int i = 0; i < n; i++) lastTwo = (lastTwo * 5) % 100;
+    cout << (lastTwo < 10 ? "0" : "") << lastTwo;
+}
