@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string s;
+    getline(cin, s);
+    set<char> letters;
+    for (char c : s) {
+        letters.insert(tolower(c));
+    }
+    cout << (letters.size() >= 26 ? "YES" : "NO");
+}
