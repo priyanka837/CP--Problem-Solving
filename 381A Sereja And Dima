@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> a(n);
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    int l = 0, r = n - 1;
+    int sScore = 0, dScore = 0;
+    bool serejaTurn = true;
+
+    while (l <= r) {
+        if (a[l] > a[r]) {
+            if (serejaTurn) sScore += a[l];
+            else dScore += a[l];
+            l++;
+        } else {
+            if (serejaTurn) sScore += a[r];
+            else dScore += a[r];
+            r--;
+        }
+        serejaTurn = !serejaTurn;
+    }
+
+    cout << sScore << " " << dScore;
+}
