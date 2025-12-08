@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int n, cnt = 0;
+    cin >> n;
+    vector<int> bills = {100, 20, 10, 5, 1};
+    for (int b : bills) {
+        cnt += n / b;
+        n %= b;
+    }
+    cout << cnt;
+}
